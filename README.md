@@ -10,7 +10,7 @@ This repository reflects a solution to road detection and road length calculatio
 
   ![](images/Picture1.png)
 
-![](images/Picture2.png)
+  ![](images/Picture2.png)
 * Once uploaded it usually takes 3-5 minutes to process depending on the size of the image
 
   ![](images/Picture4.png)
