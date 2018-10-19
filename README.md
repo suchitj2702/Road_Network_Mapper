@@ -8,28 +8,28 @@ This repository reflects a solution to road detection and road length calculatio
 ## The Application
 * On the landing page the user can either upload his/her own images or to test the application the user can use the example test images provided
 
-![](images/Picture1.png)
+  ![](images/Picture1.png)
 
 ![](images/Picture2.png)
 * Once uploaded it usually takes 3-5 minutes to process depending on the size of the image
 
-![](images/Picture4.png)
+  ![](images/Picture4.png)
 * Once done processing the user can view the results by clicking the "View Results" button
 
-![](images/Picture5.png)
+  ![](images/Picture5.png)
 * The result shows the output image with roads clearly marked along with the length of the road detected
 
-![](images/Picture6.png)
+  ![](images/Picture6.png)
 
 ## How does it work?
 ### The Dataset
 * The dataset used were a set of 1000 images collected from drones, over various types of Indian settlements.
 * Ground Truth was made by masking another blank layer onto the original image and marking each pixel which represented road.
 
-![](images/dataset1.jpg)
+  ![](images/dataset1.jpg)
 * A CSV file with 28 features of each pixel was made for each image. The features being RGB values of the pixel itself along with each of the adjacent pixel. The last column being either 0 or 1 representing road pixel or non-road pixel.
 
-![](images/dataset2.png)
+  ![](images/dataset2.png)
 * The CSV of 170 such images were combined to form one huge CSV as the training set.
 
 ### Machine Learning
