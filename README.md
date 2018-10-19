@@ -64,6 +64,4 @@ It is an observation that since drones do not fly very high, we usually get a ve
 Upon training and testing a number of Deep-Learning algorithms such as Resnet, ResUnet, Segnet etc on our self-created dataset a common pattern was found. The model was overfitting, it was giving good results on the training data but was performing extremely poorly on the test data. Now this could be due to 2 reasons, either less number of training data or too many features. We concluded the latter to be the case here.
 
 ### Conclusion
-Thus we stripped everything down to the basics and resorted to some of the traditional techniques used for segmentation.
-
-Random Forest ended up being the choice since it gave the most accurate result.
+Thus we stripped everything down to the basics and resorted to some of the traditional techniques used for segmentation. Random Forest ended up being the choice since it gave the most accurate result.
