@@ -48,12 +48,22 @@ This repository reflects a solution to road detection and road length calculatio
 * For testing the accuracy of the length, comparisons were made with the length of roads found out from Google Maps for the same area. This was tested for a huge set of images.
 * The length turns out to be accurate up to an average variance of 5 meters
 
-## Why not use modern deep learning algorithms?
-There are deep-learning algorithms that have already been successfully appointed to do the task of image segmentation, some of them being [ResUNet](https://arxiv.org/abs/1711.10684), [U-Net](https://pdfs.semanticscholar.org/0704/5f87709d0b7b998794e9fa912c0aba912281.pdf), [SegNet](https://arxiv.org/pdf/1511.00561.pdf) etc.
+## Why not use deep learning algorithms?
+### What could have been used...
+For such kind of segmentation problems the first thing that comes to mind is that it can be solved with the use of modern deep-learning architectures like Fully Convolutional Network's(FCN's) and Convolutional Neural Network(CNN's). There are deep-learning algorithms that have already been successfully appointed to do the task of image segmentation, some of them being [ResUNet](https://arxiv.org/abs/1711.10684), [U-Net](https://pdfs.semanticscholar.org/0704/5f87709d0b7b998794e9fa912c0aba912281.pdf), [SegNet](https://arxiv.org/pdf/1511.00561.pdf) etc.
 
-[SpaceNet Road Segmentation Challenge](https://medium.com/the-downlinq/spacenet-road-detection-and-routing-challenge-part-i-d4f59d55bfce) is a competition wherein the competitors are challenged to create a model to detect roads given satellite images.
-The target consumer for our application is municipal authorities and other urban planning committees which do not have access to latest satellite images of an area at their will.
+[SpaceNet Road Segmentation Challenge](https://medium.com/the-downlinq/spacenet-road-detection-and-routing-challenge-part-i-d4f59d55bfce) is a competition wherein the competitors are challenged to create a model to detect roads given **_satellite_** images, and most of the successful winners usually use some form of FCN. Notice the emphasis on "Satellite" here.
 
-It is an observation here that since drones do not fly very high, we usually get very high resolution image and thus in a general sense we have a lot of features to deal with.
+### The target consumer and the problems associated...
+The target consumer for our application is municipal authorities and other urban planning committees which do not have access to latest satellite images of an area at their will. Some advanced countries might provide such real time access to these entities, but for a fact this cannot be done in countries like India as of now because most of them have not yet established high resolution surveillance/mapping satellites of their own and have to rely on American Agencies for their data.
 
-SpaceNet challenge does it on satellite images all trained in USA, not meant to be used by municipal.
+Thus drone data comes out to be a viable solution to this problem of automation because flying the drone is a comparatively inexpensive task and does not require much manual labor. Modern drones can easily be tasked to follow waypoints in an area, making the task of collecting data easier and much less challenging for the user.
+
+It is an observation that since drones do not fly very high, we usually get a very high resolution image. In contrast to satellite collected images, drone images end up absorbing much more features and details. The downside to this is the complexity it poses to the algorithm. The classifier has to differentiate among much more features before arriving some form of segmentation.
+
+Upon training and testing a number of Deep-Learning algorithms such as Resnet, ResUnet, Segnet etc on our self-created dataset a common pattern was found. The model was overfitting, it was giving good results on the training data but was performing extremely poorly on the test data. Now this could be due to 2 reasons, either less number of training data or too many features. We concluded the latter to be the case here.
+
+### Conclusion
+Thus we stripped everything down to the basics and resorted to some of the traditional techniques used for segmentation.
+
+Random Forest ended up being the choice since it gave the most accurate result.
