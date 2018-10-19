@@ -10,7 +10,7 @@ This repository reflects a solution to road detection and road length calculatio
 
   ![](images/Picture1.png)
 
-![](images/Picture2.png)
+  ![](images/Picture2.png)
 * Once uploaded it usually takes 3-5 minutes to process depending on the size of the image
 
   ![](images/Picture4.png)
@@ -48,7 +48,10 @@ This repository reflects a solution to road detection and road length calculatio
 * For testing the accuracy of the length, comparisons were made with the length of roads found out from Google Maps for the same area. This was tested for a huge set of images.
 * The length turns out to be accurate up to an average variance of 5 meters
 
+## Why not use modern deep learning algorithms?
+There are deep-learning algorithms that have already been successfully appointed to do the task of image segmentation, some of them being [ResUNet](https://arxiv.org/abs/1711.10684), [U-Net](https://pdfs.semanticscholar.org/0704/5f87709d0b7b998794e9fa912c0aba912281.pdf), [SegNet](https://arxiv.org/pdf/1511.00561.pdf) etc.
 
+[SpaceNet Road Segmentation Challenge](https://medium.com/the-downlinq/spacenet-road-detection-and-routing-challenge-part-i-d4f59d55bfce) is a competition wherein the competitors are challenged to create a model to detect roads given satellite images.
 The target consumer for our application is municipal authorities and other urban planning committees which do not have access to latest satellite images of an area at their will.
 
 It is an observation here that since drones do not fly very high, we usually get very high resolution image and thus in a general sense we have a lot of features to deal with.
